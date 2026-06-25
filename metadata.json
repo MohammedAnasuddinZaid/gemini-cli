@@ -1,0 +1,6 @@
+{
+  "name": "BELVO Services",
+  "description": "Premium Services Page for BELVO Agency featuring 14 distinct digital, design, and development service domains.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
