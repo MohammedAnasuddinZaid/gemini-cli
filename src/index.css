@@ -17,15 +17,15 @@
   --color-gold-800: #574116;
   --color-gold-900: #3c2d11;
   
-  --color-dark-bg: #050508;
-  --color-dark-card: #0d0d15;
-  --color-dark-border: #1a1a26;
+  --color-dark-bg: #f8f9fa;
+  --color-dark-card: #ffffff;
+  --color-dark-border: #e5e7eb;
 }
 
 @layer base {
   body {
     background-color: var(--color-dark-bg);
-    color: #f3f4f6;
+    color: #111827;
     font-family: var(--font-sans);
   }
 }

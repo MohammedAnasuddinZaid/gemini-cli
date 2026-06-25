@@ -88,11 +88,11 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
     <div className="border border-dark-border bg-dark-card rounded-2xl p-6 lg:sticky lg:top-24 h-fit" id="project-planner-container">
       <div className="flex items-center justify-between pb-4 border-b border-dark-border/60">
         <div>
-          <h3 className="text-lg font-display font-bold text-white tracking-tight flex items-center gap-2">
+          <h3 className="text-lg font-display font-bold text-gray-900 tracking-tight flex items-center gap-2">
             <Briefcase className="w-5 h-5 text-gold-500" />
             Project Planner
           </h3>
-          <p className="text-[11px] font-mono text-gray-400 mt-1">
+          <p className="text-[11px] font-mono text-gray-500 mt-1">
             Selected services: {selectedServices.length}
           </p>
         </div>
@@ -118,8 +118,8 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
             <div className="w-16 h-16 bg-gold-500/10 border border-gold-500/30 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-8 h-8 text-gold-500" />
             </div>
-            <h4 className="text-lg font-display font-bold text-white">Inquiry Received</h4>
-            <p className="text-xs text-gray-400 mt-2 leading-relaxed max-w-sm mx-auto">
+            <h4 className="text-lg font-display font-bold text-gray-900">Inquiry Received</h4>
+            <p className="text-xs text-gray-500 mt-2 leading-relaxed max-w-sm mx-auto">
               Our directors will review your plan coordinates and reach out within 12 business hours.
             </p>
             <button
@@ -136,9 +136,9 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
             animate={{ opacity: 1 }}
             className="text-center py-16"
           >
-            <div className="text-gray-600 mb-3 font-mono text-2xl">⚡</div>
-            <h4 className="text-sm font-display font-semibold text-gray-300">Your Plan is Empty</h4>
-            <p className="text-xs text-gray-500 mt-2 max-w-xs mx-auto leading-relaxed">
+            <div className="text-gray-300 mb-3 font-mono text-2xl">⚡</div>
+            <h4 className="text-sm font-display font-semibold text-gray-600">Your Plan is Empty</h4>
+            <p className="text-xs text-gray-400 mt-2 max-w-xs mx-auto leading-relaxed">
               Add specific services from our creative suite or technical suite to map your brand launch.
             </p>
           </motion.div>
@@ -159,9 +159,9 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
                 <div className="flex justify-between items-start text-xs border-b border-dark-border/20 pb-2">
                   <div>
                     <span className="font-semibold text-amber-400 block">Creative Division</span>
-                    <span className="text-[10px] text-gray-400">{creativeServices.length} Design & Brand channels</span>
+                    <span className="text-[10px] text-gray-500">{creativeServices.length} Design & Brand channels</span>
                   </div>
-                  <span className="font-mono text-[10px] text-gray-300">Active</span>
+                  <span className="font-mono text-[10px] text-gray-600">Active</span>
                 </div>
               )}
 
@@ -169,28 +169,28 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
                 <div className="flex justify-between items-start text-xs">
                   <div>
                     <span className="font-semibold text-emerald-400 block">Technical Division</span>
-                    <span className="text-[10px] text-gray-400">{technicalServices.length} Technical & System channels</span>
+                    <span className="text-[10px] text-gray-500">{technicalServices.length} Technical & System channels</span>
                   </div>
-                  <span className="font-mono text-[10px] text-gray-300">Active</span>
+                  <span className="font-mono text-[10px] text-gray-600">Active</span>
                 </div>
               )}
             </div>
 
             {/* Selected items chip roster */}
             <div>
-              <span className="text-[10px] font-mono text-gray-400 tracking-wider uppercase block mb-2">
+              <span className="text-[10px] font-mono text-gray-500 tracking-wider uppercase block mb-2">
                 Active Selection Channels
               </span>
               <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto pr-1">
                 {selectedServices.map((service) => (
                   <div
                     key={service.id}
-                    className="flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded bg-dark-bg border border-dark-border text-white group"
+                    className="flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded bg-dark-bg border border-dark-border text-gray-900 group"
                   >
                     <span className="truncate max-w-[120px]">{service.name}</span>
                     <button
                       onClick={() => onRemoveService(service.id)}
-                      className="text-gray-500 hover:text-red-400 transition-colors duration-200"
+                      className="text-gray-400 hover:text-red-400 transition-colors duration-200"
                     >
                       <X className="w-3 h-3" />
                     </button>
@@ -207,7 +207,7 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
 
               {/* Full Name */}
               <div className="relative">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                   <User className="w-4 h-4" />
                 </span>
                 <input
@@ -217,13 +217,13 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
                   placeholder="Full Name"
                   value={formData.fullName}
                   onChange={handleInputChange}
-                  className="w-full bg-dark-bg border border-dark-border rounded-lg pl-9 pr-3 py-2 text-xs text-white focus:outline-none focus:border-gold-500 transition-colors duration-200 placeholder-gray-600"
+                  className="w-full bg-dark-bg border border-dark-border rounded-lg pl-9 pr-3 py-2 text-xs text-gray-900 focus:outline-none focus:border-gold-500 transition-colors duration-200 placeholder-gray-600"
                 />
               </div>
 
               {/* Email Address */}
               <div className="relative">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                   <Mail className="w-4 h-4" />
                 </span>
                 <input
@@ -233,13 +233,13 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
                   placeholder="Email Address"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full bg-dark-bg border border-dark-border rounded-lg pl-9 pr-3 py-2 text-xs text-white focus:outline-none focus:border-gold-500 transition-colors duration-200 placeholder-gray-600"
+                  className="w-full bg-dark-bg border border-dark-border rounded-lg pl-9 pr-3 py-2 text-xs text-gray-900 focus:outline-none focus:border-gold-500 transition-colors duration-200 placeholder-gray-600"
                 />
               </div>
 
               {/* Company Name */}
               <div className="relative">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                   <Building className="w-4 h-4" />
                 </span>
                 <input
@@ -248,19 +248,19 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
                   placeholder="Company / Brand Name"
                   value={formData.companyName}
                   onChange={handleInputChange}
-                  className="w-full bg-dark-bg border border-dark-border rounded-lg pl-9 pr-3 py-2 text-xs text-white focus:outline-none focus:border-gold-500 transition-colors duration-200 placeholder-gray-600"
+                  className="w-full bg-dark-bg border border-dark-border rounded-lg pl-9 pr-3 py-2 text-xs text-gray-900 focus:outline-none focus:border-gold-500 transition-colors duration-200 placeholder-gray-600"
                 />
               </div>
 
               {/* Budget and Project Type */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[9px] font-mono text-gray-500 uppercase block mb-1">Est. Budget</label>
+                  <label className="text-[9px] font-mono text-gray-400 uppercase block mb-1">Est. Budget</label>
                   <select
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full bg-dark-bg border border-dark-border rounded-lg px-2 py-1.5 text-[11px] text-white focus:outline-none focus:border-gold-500"
+                    className="w-full bg-dark-bg border border-dark-border rounded-lg px-2 py-1.5 text-[11px] text-gray-900 focus:outline-none focus:border-gold-500"
                   >
                     <option value="<$10k">&lt; $10,000</option>
                     <option value="$10k - $25k">$10k – $25,000</option>
@@ -269,12 +269,12 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
                   </select>
                 </div>
                 <div>
-                  <label className="text-[9px] font-mono text-gray-500 uppercase block mb-1">Contract Type</label>
+                  <label className="text-[9px] font-mono text-gray-400 uppercase block mb-1">Contract Type</label>
                   <select
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleInputChange}
-                    className="w-full bg-dark-bg border border-dark-border rounded-lg px-2 py-1.5 text-[11px] text-white focus:outline-none focus:border-gold-500"
+                    className="w-full bg-dark-bg border border-dark-border rounded-lg px-2 py-1.5 text-[11px] text-gray-900 focus:outline-none focus:border-gold-500"
                   >
                     <option value="One-time Project">One-Time Build</option>
                     <option value="Monthly Retainer">Monthly Retainer</option>
@@ -285,7 +285,7 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
 
               {/* Message / Brief */}
               <div className="relative">
-                <span className="absolute top-2.5 left-0 flex items-start pl-3 text-gray-500">
+                <span className="absolute top-2.5 left-0 flex items-start pl-3 text-gray-400">
                   <MessageSquare className="w-4 h-4" />
                 </span>
                 <textarea
@@ -295,7 +295,7 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
                   placeholder="Tell us about your project coordinates..."
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full bg-dark-bg border border-dark-border rounded-lg pl-9 pr-3 py-2 text-xs text-white focus:outline-none focus:border-gold-500 transition-colors duration-200 placeholder-gray-600 resize-none"
+                  className="w-full bg-dark-bg border border-dark-border rounded-lg pl-9 pr-3 py-2 text-xs text-gray-900 focus:outline-none focus:border-gold-500 transition-colors duration-200 placeholder-gray-600 resize-none"
                 />
               </div>
 
@@ -325,7 +325,7 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
       {/* Persistent Client-Side Submission Records (Local Storage proof of life) */}
       {pastInquiries.length > 0 && (
         <div className="mt-6 pt-5 border-t border-dark-border/60">
-          <div className="flex items-center gap-1.5 text-[10px] font-mono text-gray-400 uppercase tracking-wider mb-3">
+          <div className="flex items-center gap-1.5 text-[10px] font-mono text-gray-500 uppercase tracking-wider mb-3">
             <Database className="w-3.5 h-3.5 text-gold-500" />
             <span>Local Blueprint Vault ({pastInquiries.length})</span>
           </div>
@@ -333,13 +333,13 @@ export default function ProjectPlanner({ selectedServices, onRemoveService, onCl
             {pastInquiries.map((inq, index) => (
               <div key={index} className="bg-dark-bg/40 p-2.5 rounded border border-dark-border/40 text-[11px]">
                 <div className="flex justify-between items-center mb-1">
-                  <span className="font-semibold text-white">{inq.fullName}</span>
+                  <span className="font-semibold text-gray-900">{inq.fullName}</span>
                   <span className="text-[9px] font-mono text-gold-400">{inq.budget}</span>
                 </div>
-                <p className="text-[10px] text-gray-400 truncate mb-1">Company: {inq.companyName || 'N/A'}</p>
+                <p className="text-[10px] text-gray-500 truncate mb-1">Company: {inq.companyName || 'N/A'}</p>
                 <div className="flex flex-wrap gap-1 mt-1">
                   {inq.selectedServices.map(sid => (
-                    <span key={sid} className="text-[8px] bg-dark-bg text-gray-300 px-1 rounded">
+                    <span key={sid} className="text-[8px] bg-dark-bg text-gray-600 px-1 rounded">
                       Ch.{sid}
                     </span>
                   ))}

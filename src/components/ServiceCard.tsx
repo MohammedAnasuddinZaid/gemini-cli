@@ -74,10 +74,10 @@ export default function ServiceCard({ service, isSelectedInPlanner, onTogglePlan
               {getIcon(service.iconName)}
             </div>
             <div>
-              <span className="text-[10px] font-mono tracking-wider uppercase text-gray-400">
+              <span className="text-[10px] font-mono tracking-wider uppercase text-gray-500">
                 {service.category}
               </span>
-              <h4 className="text-base font-display font-bold text-white tracking-tight group-hover:text-gold-300 transition-colors duration-200">
+              <h4 className="text-base font-display font-bold text-gray-900 tracking-tight group-hover:text-gold-300 transition-colors duration-200">
                 {service.name}
               </h4>
             </div>
@@ -99,7 +99,7 @@ export default function ServiceCard({ service, isSelectedInPlanner, onTogglePlan
           {service.keywords.map((tag) => (
             <span
               key={tag}
-              className="text-[10px] font-mono px-2 py-0.5 rounded bg-dark-bg text-gray-300 border border-dark-border group-hover:border-gold-500/10 transition-colors duration-300"
+              className="text-[10px] font-mono px-2 py-0.5 rounded bg-dark-bg text-gray-600 border border-dark-border group-hover:border-gold-500/10 transition-colors duration-300"
             >
               #{tag}
             </span>
@@ -107,7 +107,7 @@ export default function ServiceCard({ service, isSelectedInPlanner, onTogglePlan
         </div>
 
         {/* Refined Description */}
-        <p className="text-xs text-gray-300/90 leading-relaxed mt-4">
+        <p className="text-xs text-gray-600/90 leading-relaxed mt-4">
           {service.description}
         </p>
 
@@ -126,7 +126,7 @@ export default function ServiceCard({ service, isSelectedInPlanner, onTogglePlan
                   Core Implementation Features
                 </span>
                 {service.features.map((feature, i) => (
-                  <div key={i} className="flex gap-2 items-start text-xs text-gray-300">
+                  <div key={i} className="flex gap-2 items-start text-xs text-gray-600">
                     <span className="text-gold-500 text-[10px] mt-1">✦</span>
                     <span>{feature}</span>
                   </div>
@@ -134,14 +134,14 @@ export default function ServiceCard({ service, isSelectedInPlanner, onTogglePlan
                 
                 <div className="grid grid-cols-2 gap-3 mt-4 pt-3 border-t border-dark-border/40 font-mono text-[10px]">
                   <div>
-                    <span className="text-gray-400 block">Est. Timeline</span>
-                    <span className="text-white flex items-center gap-1 mt-0.5">
+                    <span className="text-gray-500 block">Est. Timeline</span>
+                    <span className="text-gray-900 flex items-center gap-1 mt-0.5">
                       <Calendar className="w-3 h-3 text-gold-500" />
                       {service.estimatedTimeline}
                     </span>
                   </div>
                   <div>
-                    <span className="text-gray-400 block">Execution Complexity</span>
+                    <span className="text-gray-500 block">Execution Complexity</span>
                     <span className={`font-semibold mt-0.5 block ${
                       service.complexity === 'Expert' ? 'text-red-400' :
                       service.complexity === 'High' ? 'text-orange-400' : 'text-blue-400'
@@ -160,7 +160,7 @@ export default function ServiceCard({ service, isSelectedInPlanner, onTogglePlan
       <div className="px-5 pb-5 pt-2 flex items-center gap-3 border-t border-dark-border/40 bg-dark-bg/20">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center gap-1 text-[11px] font-mono text-gray-400 hover:text-white transition-colors duration-200"
+          className="flex items-center gap-1 text-[11px] font-mono text-gray-500 hover:text-gray-900 transition-colors duration-200"
           id={`service-expand-btn-${service.id}`}
         >
           {isExpanded ? (
